@@ -1,0 +1,13 @@
+---
+# handlers file for Docker service
+
+- name: Enable Docker service
+  systemd:
+    name: docker
+    enabled: yes
+    masked: no
+
+- name: Make sure the service is running
+  systemd:
+    state: started
+    name: docker
